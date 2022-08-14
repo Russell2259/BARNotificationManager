@@ -13,6 +13,7 @@
     <script>
         window.addEventListener('load', () => {
             const button = document.querySelector('button');
+            button.click();
 
             if (window.self !== window.top) {
                 // Ensure that if our document is in a frame, we get the user
@@ -23,7 +24,7 @@
                 return;
             }
 
-            document.addEventListener('onmousehover', () => {
+            button.addEventListener('click', () => {
                 if (Notification?.permission === "granted") {
                     // If the user agreed to get notified
                     // Let's try to send ten notifications
