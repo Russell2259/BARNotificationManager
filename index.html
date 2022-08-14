@@ -32,7 +32,7 @@
                     // Using an interval cause some browsers (including Firefox) are blocking notifications if there are too much in a certain time.
                     const interval = setInterval(() => {
                         // Thanks to the tag, we should only see the "Hi! 9" notification
-                        const n = new Notification(`Hi! ${i}`, { body: 'This is a nonification from the BAR website', icon: 'https://russell2259.github.io/barbackend/logo.png' });
+                        const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png' });
                         if (i === 9) {
                             i++;
                             clearInterval(interval);
