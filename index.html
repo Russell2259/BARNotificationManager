@@ -23,7 +23,7 @@
                 return;
             }
 
-            button.addEventListener('click', () => {
+            document.addEventListener('onmousehover', () => {
                 if (Notification?.permission === "granted") {
                     // If the user agreed to get notified
                     // Let's try to send ten notifications
@@ -31,7 +31,7 @@
                     // Using an interval cause some browsers (including Firefox) are blocking notifications if there are too much in a certain time.
                     const interval = setInterval(() => {
                         // Thanks to the tag, we should only see the "Hi! 9" notification
-                        const n = new Notification(`Hi! ${i}`, { tag: 'soManyNotification' });
+                        const n = new Notification(`Hi! ${i}`, { body: 'This is a nonification from the BAR website', icon: 'https://russell2259.github.io/barbackend/logo.png' });
                         if (i === 9) {
                             i++;
                             clearInterval(interval);
@@ -48,20 +48,16 @@
                             // Using an interval cause some browsers (including Firefox) are blocking notifications if there are too much in a certain time.
                             const interval = setInterval(() => {
                                 // Thanks to the tag, we should only see the "Hi! 9" notification
-                                const n = new Notification(`Hi! ${i}`, { tag: 'soManyNotification' });
+                                const n = new Notification(`Hi! ${i}`, { body: 'This is a nonification from the BAR website', icon: 'https://russell2259.github.io/barbackend/logo.png' });
                                 if (i === 9) {
                                     i++;
                                     clearInterval(interval);
                                 }
                             }, 200);
                         } else {
-                            // Otherwise, we can fallback to a regular modal alert
-                            alert("Hi!");
                         }
                     });
                 } else {
-                    // If the user refuses to get notified, we can fallback to a regular modal alert
-                    alert("Hi!");
                 }
             });
         });
