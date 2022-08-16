@@ -27,7 +27,7 @@
                 const button = document.querySelector('button');
                 button.addEventListener('click', () => {
                     if (Notification?.permission === "granted") {
-                        const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png' });
+                        const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png', actions: [{action: 'like', title: '👍Like'},{action: 'reply', title: '⤻ Reply'}] });
                     } else if (Notification && Notification.permission !== "denied") {
                         // If the user hasn't told if they want to be notified or not
                         // Note: because of Chrome, we are not sure the permission property
