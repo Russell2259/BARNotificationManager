@@ -35,7 +35,7 @@
                         Notification.requestPermission((status) => {
                             // If the user said okay
                             if (status === "granted") {
-                                const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png' });
+                                const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png', actions: [{action: 'like', title: '👍Like'},{action: 'reply', title: '⤻ Reply'}] });
                             } else {
                             }
                         });
