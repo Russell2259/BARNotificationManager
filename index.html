@@ -25,9 +25,24 @@
                 }
             } else {
                 const button = document.querySelector('button');
+                const title = 'Actions Notification';
+const options = {
+  actions: [
+    {
+      action: 'coffee-action',
+      title: 'Coffee',
+      icon: '/images/demos/action-1-128x128.png',
+    },
+    {
+      action: 'doughnut-action',
+      title: 'Doughnut',
+      icon: '/images/demos/action-2-128x128.png',
+    }
+  ],
+};
                 button.addEventListener('click', () => {
                     if (Notification?.permission === "granted") {
-                        const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png', actions: [{action: 'like', title: '👍Like'},{action: 'reply', title: '⤻ Reply'}] });
+                        const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png' });
                     } else if (Notification && Notification.permission !== "denied") {
                         // If the user hasn't told if they want to be notified or not
                         // Note: because of Chrome, we are not sure the permission property
@@ -35,7 +50,7 @@
                         Notification.requestPermission((status) => {
                             // If the user said okay
                             if (status === "granted") {
-                                const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png', actions: [{action: 'like', title: '👍Like'},{action: 'reply', title: '⤻ Reply'}] });
+                                const n = new Notification('Hello Russell', { body: 'Version 1.8.1 has been released as a stable version download it NOW.', icon: 'https://russell2259.github.io/barbackend/logo.png', image: 'https://russell2259.github.io/barbackend/logo.png' });
                             } else {
                             }
                         });
